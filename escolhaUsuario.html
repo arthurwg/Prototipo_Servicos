@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escolha Usuario</title>
+
+     <!-- Jquery -->
+     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+     <!-- Scripts -->
+     <script src="includes/logica/scripts/script.js"></script>
+
+</head>
+<body>
+
+    <input type="button" onclick="escolheTipo('usuario')" value="Usuario" id="escolhaUsuario" >
+    <input type="button" onclick="escolheTipo('prestador')" value="Prestador" id="escolhaPrestador" >
+    <form  action="logar.php" method="post" name="escolhaform" id="escolha">
+    <div id="inputEscolha"></div>
+    <input type="submit">
+    </form>
+   
+    
+</body>
+</html>
