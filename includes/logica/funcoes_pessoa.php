@@ -6,25 +6,50 @@
         
         
  
-function inserirPessoa($conexao,$array,$link)
+function inserirPessoa($conexao,$array,$link,$tipoCadastro)
 {
-    try {
+    if ($tipoCadastro == 'usuario') {
+        try {
             $email = $array[2];
             
             mailer($email, $link);
             $query = $conexao->prepare(
                 "insert into usuarios 
-            (nome, cpf,  email, senha, cep, estado,cidade,celular ) values (?, ?, ?, ?, ?, ?, ?, ?)"
+                (nome, cpf,  email, senha, cep, estado,cidade,bairro,celular )
+                values (?, ?, ?, ?, ?, ?, ?, ?,?)"
             );
 
-            $resultado = $query->execute($array);
+                $resultado = $query->execute($array);
             
-            return $resultado;
+                return $resultado;
             
            
         
-    }catch(PDOException $e) {
-        echo 'Error: ' . $e->getMessage();
+        }catch(PDOException $e) {
+            echo 'Error: ' . $e->getMessage();
+        }
+
+    } else if ($tipoCadastro == 'prestador') {
+        try{
+            $email = $array[2];
+            
+            mailer($email, $link);
+            $query = $conexao->prepare(
+                "insert into prestadores_servico 
+                (nome,cpf,email,cnpj,nome_profissional, senha, cep, estado,cidade,bairro,celular) 
+                values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)"
+            );
+
+            $resultado = $query->execute($array);
+    
+            return $resultado;
+    
+   
+
+        }catch(PDOException $e) {
+            echo 'Error: ' . $e->getMessage();
+        }
+
     }
 
 }
@@ -83,30 +108,55 @@ function buscarPessoa($conexao,$array)
     }  
 }
 
-function acessarPessoa($conexao,$array,$senha)
+function acessarPessoa($conexao,$array,$senha,$escolha)
 {
-    try {
-        $query = $conexao->prepare("select * from usuarios where email=?");
-        if($query->execute($array)) {
-            $pessoa = $query->fetch(); //coloca os dados num array $usuario
-            if ($pessoa) {  
-                if(password_verify($senha, $pessoa['senha']) and $pessoa['confirmacao'] == 1) {
-                    return $pessoa;
-                }else{
+    if ($escolha == "usuario") {
+        try {
+            $query = $conexao->prepare("select * from usuarios where email=?");
+            if($query->execute($array)) {
+                $pessoa = $query->fetch(); //coloca os dados num array $usuario
+                if ($pessoa) {  
+                    if (password_verify($senha, $pessoa['senha']) and $pessoa['confirmacao'] == 1) {
+                        return $pessoa;
+                    } else {
+                        return false;
+                    }
+                } else
+                {
                     return false;
                 }
-            }
-            else
-            {
+            } else {
                 return false;
             }
-        }
-        else{
-            return false;
-        }
-    }catch(PDOException $e) {
-          echo 'Error: ' . $e->getMessage();
-    }  
+        }catch(PDOException $e) {
+              echo 'Error: ' . $e->getMessage();
+        }  
+    }
+
+    if ($escolha == "prestador") {
+
+        try {
+            $query = $conexao->prepare("select * from prestadores_servico where email=?");
+            if($query->execute($array)) {
+                 $pessoa = $query->fetch(); //coloca os dados num array $usuario
+                if ($pessoa) {  
+                    if (password_verify($senha, $pessoa['senha']) and $pessoa['confirmacao'] == 1) {
+                          return $pessoa;
+                    } else {
+                         return false;
+                    }
+                } else {
+                    return false;
+                }
+            } else {
+                 return false;
+            }
+        }catch(PDOException $e) {
+            echo 'Error: ' . $e->getMessage();
+        }  
+
+    }
+
 }
 
 function mailer($email,$mensagem)

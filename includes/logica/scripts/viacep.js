@@ -1,4 +1,6 @@
-$(document).ready(function() {
+//$(document).ready(function() {
+
+function viacep(){
 
     function limpa_formulário_cep() {
         // Limpa valores do formulário de cep.
@@ -36,8 +38,11 @@ $(document).ready(function() {
 
                     if (!("erro" in dados)) {
                         //Atualiza os campos com os valores da consulta.
+                        
                         $("#cidade").val(dados.localidade);
                         $("#estado").val(dados.uf);
+                        $("#bairro").val(dados.bairro);
+                        
                         
                     } //end if.
                     else {
@@ -58,4 +63,4 @@ $(document).ready(function() {
             limpa_formulário_cep();
         }
     });
-});
+};

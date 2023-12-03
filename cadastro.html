@@ -6,8 +6,17 @@
         <!-- Scripts -->
         <script src="includes/logica/scripts/viacep.js"></script>
         <script src="includes/logica/scripts/script.js"></script>
+        
     </head>
     <body>
+        
+         <form>
+        <input type="button" onclick="tipoCadastro(1)" value="Usuario">
+        <input type="button" onclick="tipoCadastro(2)" value="Prestador de Serviço">
+    </form>
+        
+        <div id="formularioCadastro"></div>
+        <!-- <a href="logar.php">Voltar</a>
         <form action="includes/logica/logica_pessoa.php" id="cadastro" method="post" >
             <label for="email">Email:</label>
              <input type="text" id="email" name="email">
@@ -32,11 +41,12 @@
             <p id="celularObrigatorio" style="color: red;"></p>
             <label for="estado">Estado:</label>
              <input type="text" id="estado" name="estado"  readonly>
-            <p></p>
+            <p id="estadoObrigatorio" style="color: red;"></p>
             <label for="cidade">Cidade:</label>
              <input type="text" id="cidade" name="cidade" readonly>
+             <p id="cidadeObrigatorio" style="color: red;"></p>
             <input type="submit" name="cadastrar" id="cadastrar"  value="enviar" onclick="confirmacao(event)" >
 
-        </form>
+        </form> -->
     </body>
 </html>
