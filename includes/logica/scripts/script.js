@@ -125,39 +125,73 @@ function tipoCadastro(tipo) {
 
         var formulario = `<a href='logar.php'>Voltar</a>
         <form action='includes/logica/logica_pessoa.php' id='cadastro' method='post'>
-            <label for='email'>Email:</label>
-            <input type='text' id='email' name='email'>
+        <div class='row'>
+         <div class='col-md-6'>  
+            <label class='form-label' for='email'>Email:</label>
+            <input class='form-control' type='text' id='email' name='email'>
             <p id='emailObrigatorio' style='color: red;'></p>
-            <label for='nome'>Nome:</label>
-            <input type='text' id='nome' name='nome'>
+         </div>
+         <div class='col-md-6'>  
+            <label class='form-label' for='nome'>Nome:</label>
+            <input class='form-control' type='text' id='nome' name='nome'>
             <p id='nomeObrigatorio' style='color: red;'></p>
-            <label for='senha'>Senha:</label>
-            <input type='password' id='senha' name='senha'>
+        </div>
+        </div>
+        
+        <div class='row'>
+            <div class='col-md-6'>  
+            <label class='form-label' for='senha'>Senha:</label>
+            <input class='form-control' type='password' id='senha' name='senha'>
             <p id='senhaObrigatorio' style='color: red;'></p>
-            <label for='confirmaSenha'>Confirmação de senha:</label>
-            <input type='password' id='confirmaSenha' name='confirmaSenha'>
+        </div> 
+        <div class='col-md-6'>     
+            <label class='form-label' for='confirmaSenha'>Confirmação de senha:</label>
+            <input class='form-control' type='password' id='confirmaSenha' name='confirmaSenha'>
             <p id='confirmaObrigatorio' style='color: red;'></p>
-            <label for='cpf'>CPF:</label>
-            <input type='text' id='cpf' name='cpf' maxlength='11'>
+        </div>  
+        </div> 
+        <div class='row'> 
+         <div class='col-md-6'>    
+            <label class='form-label' for='cpf'>CPF:</label>
+            <input class='form-control' type='text' id='cpf' name='cpf' maxlength='11'>
             <p id='cpfObrigatorio' style='color: red;'></p>
-            <label for='cep'>CEP:</label>
-            <input type='text' id='cep' name='cep' maxlength='8'>
+        </div> 
+        <div class='col-md-6'>      
+            <label class='form-label' for='cep'>CEP:</label>
+            <input class='form-control' type='text' id='cep' name='cep' maxlength='8'>
             <p id='cepObrigatorio' style='color: red;'></p>
-            <label for='celular'>Celular:</label>
-            <input type='text' id='celular' name='celular' maxlength='11'>
+        </div>    
+        </div>   
+        <div class='row'> 
+        <div class='col-md-6'>  
+            <label class='form-label' for='celular'>Celular:</label>
+            <input class='form-control' type='text' id='celular' name='celular' maxlength='11'>
             <p id='celularObrigatorio' style='color: red;'></p>
-            <label for='estado'>Estado:</label>
-            <input type='text' id='estado' name='estado' readonly>
+        </div>  
+        <div class='col-md-6'>  
+            <label class='form-label' for='uf'>Estado:</label>
+            <input class='form-control' type='text' id='uf' name='estado' readonly>
             <p id='estadoObrigatorio' style='color: red;'></p>
-            <label for='cidade'>Cidade:</label>
-            <input type='text' id='cidade' name='cidade' readonly>
+        </div>
+        </div>
+        <div class='row'>  
+        <div class='col-md-6'>          
+            <label class='form-label' for='cidade'>Cidade:</label>
+            <input class='form-control' type='text' id='cidade' name='cidade' readonly>
             <p id='cidadeObrigatorio' style='color: red;'></p>
-            <label for='bairro'>Bairro:</label>
-            <input type='text' id='bairro' name='bairro' readonly>
+        </div>
+        <div class='col-md-6'> 
+            <label class='form-label' for='bairro'>Bairro:</label>
+            <input class='form-control' type='text' id='bairro' name='bairro' readonly>
             <p id='bairroObrigatorio' style='color: red;'></p>
+            </div>
+            <div class='row'>
+            <div class='col-md-6'>   
             <input type='text' name='tipoCadastro' id='tipoCadastro' value='usuario' style='display:none;'> 
             <input type='submit' name='cadastrar' id='cadastrar' value='enviar' style='display:none;'> 
-            <input type='button' name='cadastrar2' id='cadastrar2' value='enviar' onclick='confirmacao(event)'>
+            <input type='button' class='btn btn-secondary' name='cadastrar2' id='cadastrar2' value='Enviar' onclick='confirmacao(event)'>
+            </div>
+            </div>
         </form> `
 
         $("#formularioCadastro").html(formulario)
@@ -166,47 +200,102 @@ function tipoCadastro(tipo) {
 
         var formulario = `<a href='logar.php'>Voltar</a>
         <form action='includes/logica/logica_pessoa.php' id='cadastro' method='post' enctype='multipart/form-data'>
-            <label for='email'>Email:</label>
-            <input type='text' id='email' name='email'>
-            <p id='emailObrigatorio' style='color: red;'></p>
-            <label for='nome'>Nome:</label>
-            <input type='text' id='nome' name='nome'>
-            <p id='nomeObrigatorio' style='color: red;'></p>
-            <label for='nomeProfissional'>Nome Profissional:</label>
-            <input type='text' id='nomeProfissional' name='nomeProfissional'>
-            <p id='nomeProObrigatorio' style='color: red;'></p>
-            <label for='senha'>Senha:</label>
-            <input type='password' id='senha' name='senha'>
-            <p id='senhaObrigatorio' style='color: red;'></p>
-            <label for='confirmaSenha'>Confirmação de senha:</label>
-            <input type='password' id='confirmaSenha' name='confirmaSenha'>
-            <p id='confirmaObrigatorio' style='color: red;'></p>
-            <label for='cpf'>CPF:</label>
-            <input type='text' id='cpf' name='cpf' maxlength='11'>
-            <p id='cpfObrigatorio' style='color: red;'></p>
-            <label for='cnpj'>CNPJ(se possuir):</label>
-            <input type='text' id='cnpj' name='cnpj'>
-            <p id='cnpjObrigatorio' style='color: red;'></p>
-            <label for='cep'>CEP:</label>
-            <input type='text' id='cep' name='cep' maxlength='8'>
-            <p id='cepObrigatorio' style='color: red;'></p>
-            <label for='celular'>Celular:</label>
-            <input type='text' id='celular' name='celular' maxlength='11'>
-            <p id='celularObrigatorio' style='color: red;'></p>
-            <label for='estado'>Estado:</label>
-            <input type='text' id='estado' name='estado' readonly>
-            <p id='estadoObrigatorio' style='color: red;'></p>
-            <label for='cidade'>Cidade:</label>
-            <input type='text' id='cidade' name='cidade' readonly>
-            <p id='cidadeObrigatorio' style='color: red;'></p>
-            <label for='bairro'>Bairro:</label>
-            <input type='text' id='bairro' name='bairro' readonly>
-            <p id='bairroObrigatorio' style='color: red;'></p>
-            <label for='imagemPerfil'>Imagem de Perfil(Opcional)</label>
-            <input type='file' name='imagemPerfil' id='imagemPerfil'>
+           <div class='row'>
+                <div class='col-md-4'> 
+                    <label class='form-label' for='email'>Email:</label>
+                    <input class="form-control" type='text' id='email' name='email'>
+                     <p id='emailObrigatorio' style='color: red;'></p>
+                </div> 
+                <div class='col-md-4'> 
+                    <label class='form-label' for='nome'>Nome:</label>
+                    <input class='form-control' type='text' id='nome' name='nome'>
+                    <p id='nomeObrigatorio' style='color: red;'></p>
+                </div>
+               <div class='col-md-4'> 
+                <label class='form-label' for='nomeProfissional'>Nome Profissional:</label>
+                <input class='form-control' type='text' id='nomeProfissional' name='nomeProfissional'>
+                <p id='nomeProObrigatorio' style='color: red;'></p>
+              </div>
+              </div>
+            <div class='row'>
+              <div class='col-md-4'> 
+                <label class='form-label' for="opcoes">Escolha uma opção:</label>
+                <select class='form-select' id="opcoes" name="opcao_servico">
+                <option value="Pedreiro">Pedreiro</option>
+                <option value="Eletrecista">Eletrecista</option>
+                <option value="Jardineiro">Jardineiro</option>
+                <option value="Mecanico">Mecânico</option>
+                <option value="Encanador">Encanador</option>
+                <option value="Borracheiro">Borracheiro</option>
+                <option value="Pintor">Pintor</option>
+                <option value="Limpeza Residencial">Limpeza Residencial</option>
+                <option value="Técnico de Informática">Técnico de Informática</option>
+                <option value="Ar Condicionado e Aquecimento">Ar Condicionado e Aquecimento</option>
+                <option value="Fotógrafo/Videomaker">Fotóggrafo/Videomaker</option>
+                <option value="Babá">Babá</option>
+                <option value="Montador de Móveis">Montador de Móveis</option>
+                </select><br>
+                </div>
+                <div class='col-md-4'> 
+                    <label class='form-label' for='senha'>Senha:</label>
+                    <input class='form-control' type='password' id='senha' name='senha'>
+                    <p id='senhaObrigatorio' style='color: red;'></p>
+                </div> 
+                <div class='col-md-4'> 
+                    <label class='form-label' for='confirmaSenha'>Confirmação de senha:</label>
+                    <input class='form-control' type='password' id='confirmaSenha' name='confirmaSenha'>
+                    <p id='confirmaObrigatorio' style='color: red;'></p>
+                </div> 
+            </div>
+            <div class='row'> 
+                <div class='col-md-4'> 
+                    <label class='form-label' for='cpf'>CPF:</label>
+                    <input class='form-control' type='text' id='cpf' name='cpf' maxlength='11'>
+                    <p id='cpfObrigatorio' style='color: red;'></p>
+                </div>     
+                <div class='col-md-4'>     
+                    <label class='form-label' for='cnpj'>CNPJ(se possuir):</label>
+                    <input class='form-control' type='text' id='cnpj' name='cnpj'>
+                    <p id='cnpjObrigatorio' style='color: red;'></p>
+                </div>    
+                <div class='col-md-4'> 
+                    <label class='form-label' for='cep'>CEP:</label>
+                    <input class='form-control' type='text' id='cep' name='cep' maxlength='8'>
+                    <p id='cepObrigatorio' style='color: red;'></p>
+                </div>   
+            </div> 
+            <div class='row'> 
+                <div class='col-md-4'> 
+                    <label class='form-label' for='celular'>Celular:</label>
+                    <input class='form-control' type='text' id='celular' name='celular' maxlength='11'>
+                    <p id='celularObrigatorio' style='color: red;'></p>
+                </div>    
+           
+                <div class='col-md-4'> 
+                    <label class='form-label' for='uf'>Estado:</label>
+                    <input class='form-control' type='text' id='uf' name='estado' readonly>
+                    <p id='estadoObrigatorio' style='color: red;'></p>
+                </div>  
+                <div class='col-md-4'>   
+                    <label class='form-label' for='cidade'>Cidade:</label>
+                    <input class='form-control' type='text' id='cidade' name='cidade' readonly>
+                    <p id='cidadeObrigatorio' style='color: red;'></p>
+                </div> 
+            </div>
+            <div class='row'> 
+            <div class='col-md-6'>   
+                    <label class='form-label' for='bairro'>Bairro:</label>
+                    <input class='form-control' type='text' id='bairro' name='bairro' readonly>
+                    <p id='bairroObrigatorio' style='color: red;'></p>
+                    </div>
+                    <div class='col-md-6'>      
+                    <label class='form-label'   for='imagemPerfil'>Imagem de Perfil(Opcional)</label>
+                    <input class='form-control' type='file' name='imagemPerfil' id='imagemPerfil'>
+                    </div>
+            </div>
             <input type='text' name='tipoCadastro' id='tipoCadastro' value='prestador' style='display:none;'> 
             <input type='submit' name='cadastrar' value='enviar' id='cadastrar' style='display:none;'> 
-            <input type='button' name='cadastrar2' id='cadastrar2' value='enviar' onclick='confirmacao(event)'>
+            <input class='btn btn-secondary' type='button' name='cadastrar2' id='cadastrar2' value='Enviar' onclick='confirmacao(event)'>
         </form> `
 
         $("#formularioCadastro").html(formulario)
@@ -228,7 +317,7 @@ function escolheTipo(escolha) {
         $("#escolhaPrestador").css("color", "green");
         $("#escolhaUsuario").css("color", "");
     }
-}
+};
 
 document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.categoria').forEach(function (elemento) {
@@ -261,7 +350,7 @@ document.addEventListener('DOMContentLoaded', function () {
             solicitacaoFetch(categoriaID);
         })
 
-    }
+    };
 
    
 
@@ -285,12 +374,12 @@ document.addEventListener('DOMContentLoaded', function () {
                     console.log('Dados recebidos:', data);
     
     
-                    // Manipula os dados recebidos, por exemplo, exibindo na div com ID "resultado"
+                    
                     var listagemPrestadores = '';
-                    var barraAtributos = '<div class="grid-listagem-barra" id="listagem-barra"><a href="#" id="voltar">Voltar</a><a class="barra" data-categoria="'+ idCategoria +'" data-valor="nome" href="#">Nome</a><a>Cidade</a><a>Bairro</a><a>Email</a><a>Celular</a><a>Detalhes</a></div> ';
+                    var barraAtributos = '<div class="grid-listagem-barra" id="listagem-barra"><a href="#" id="voltar">Voltar</a><a class="barra" data-categoria="'+ idCategoria +'" data-valor="nome" href="#">Nome</a><a>Cidade</a><a>Bairro</a><a>Email</a><a>Celular</a><a class="barra" data-categoria="'+ idCategoria +'" data-valor="avaliacao" href="#">Avaliacao</a></div> ';
                     data.forEach(function (linha) {
                         let cod_prestador = linha.cod_prestador;
-                        listagemPrestadores += '<div class="grid-listagem-prestador"><div class="grid-prestador-items"><a href="perfil_prestador.php?cat='+idCategoria+'&cod='+cod_prestador+'"><img class="imagem-prestador" src="imagens/fotos_perfil_prestador/' + linha.foto_perfil + ' "></a></div><div class="grid-prestador-items"><h4>' + linha.nome_profissional + '</h4></div><div class="grid-prestador-items"><h4>' + linha.cidade + '</h4></div><div class="grid-prestador-items"><h4>' + linha.bairro + '</h4></div><div class="grid-prestador-items"><h4>' + linha.email + '</h4></div><div class="grid-prestador-items"><h4>' + linha.celular + '</h4></div></div>'
+                        listagemPrestadores += '<div class="grid-listagem-prestador"><div class="grid-prestador-items"><a href="perfil_prestador.php?cat='+idCategoria+'&cod='+cod_prestador+'"><img class="imagem-prestador imagem-redonda" src="imagens/fotos_perfil_prestador/' + linha.foto_perfil + ' "></a></div><div class="grid-prestador-items"><h5>' + linha.nome_profissional + '</h5></div><div class="grid-prestador-items"><h5>' + linha.cidade + '</h5></div><div class="grid-prestador-items"><h5>' + linha.bairro + '</h5></div><div class="grid-prestador-items"><h5>' + linha.email + '</h5></div><div class="grid-prestador-items"><h5>' + linha.celular + '</h5></div><div class="grid-prestador-items"><h5>' + linha.media + '</h5></div></div>'
     
                     })
     
@@ -320,10 +409,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 // Manipula os dados recebidos, por exemplo, exibindo na div com ID "resultado"
                 var listagemPrestadores = '';
-                var barraAtributos = '<div class="grid-listagem-barra" id="listagem-barra"><a  href="#" id="voltar">Voltar</a><a class="barra" data-valor="nome" data-categoria='+ idCategoria +' href="#">Nome</a><a>Cidade</a><a>Bairro</a><a>Email</a><a>Celular</a><a>Detalhes</a></div> ';
+                var barraAtributos = '<div class="grid-listagem-barra" id="listagem-barra"><a  href="#" id="voltar">Voltar</a><a class="barra" data-valor="nome" data-categoria='+ idCategoria +' href="#">Nome</a><a>Cidade</a><a>Bairro</a><a>Email</a><a>Celular</a><a  class="barra" data-categoria="'+ idCategoria +'" data-valor="avaliacao" href="#">Avaliação</a></div> ';
                 data.forEach(function (linha) {
                     let cod_prestador = linha.cod_prestador;
-                    listagemPrestadores += '<div class="grid-listagem-prestador"><div class="grid-prestador-items"><a href="perfil_prestador.php?cat='+idCategoria+'&cod='+cod_prestador+'"><img class="imagem-prestador" src="imagens/fotos_perfil_prestador/' + linha.foto_perfil + ' "></div> </a><div class="grid-prestador-items"><h4>' + linha.nome_profissional + '</h4></div><div class="grid-prestador-items"><h4>' + linha.cidade + '</h4></div><div class="grid-prestador-items"><h4>' + linha.bairro + '</h4></div><div class="grid-prestador-items"><h4>' + linha.email + '</h4></div><div class="grid-prestador-items"><h4>' + linha.celular + '</h4></div></div>'
+                    listagemPrestadores += '<div class="grid-listagem-prestador"><div class="grid-prestador-items"><a href="perfil_prestador.php?cat='+idCategoria+'&cod='+cod_prestador+'"><img class="imagem-prestador imagem-redonda" src="imagens/fotos_perfil_prestador/' + linha.foto_perfil + ' "></a></div><div class="grid-prestador-items"><h5>' + linha.nome_profissional + '</h5></div><div class="grid-prestador-items"><h5>' + linha.cidade + '</h5></div><div class="grid-prestador-items"><h5>' + linha.bairro + '</h5></div><div class="grid-prestador-items"><h5>' + linha.email + '</h5></div><div class="grid-prestador-items"><h5>' + linha.celular + '</h5></div><div class="grid-prestador-items"><h5>' + linha.media + '</h5></div></div>'
 
                 })
 
@@ -338,7 +427,7 @@ document.addEventListener('DOMContentLoaded', function () {
             })
     }
 
-    }
+    };
  
 
 
@@ -376,7 +465,7 @@ document.addEventListener('DOMContentLoaded', function () {
             .catch(function (error) {
                 console.error('Erro na solicitação Fetch:', error);
             })
-    }
+    };
 
 
 
@@ -388,10 +477,10 @@ function bloqueiaLink2(){
             
             var idCategoria = this.getAttribute('data-id');
             solicitacaoFetch(idCategoria);
-});
+})
 })
 
-}
+};
 
 function bloqueiaLinkBarra(){
     document.querySelectorAll('.barra').forEach(function (elemento) {
@@ -400,12 +489,454 @@ function bloqueiaLinkBarra(){
             
             var idCategoria = this.getAttribute('data-id');
             solicitacaoFetch(idCategoria);
-});
 })
+})
+
+};
+
+function checaLogin(){
+
+    
+
+    fetch('includes/logica/verificaLogin.php?agendar=true', {
+        method: 'GET'
+    })
+        .then(function (response) {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            console.log('Resposta do servidor:', response);
+            return response.json();
+        })
+        .then(function (data) {
+            
+            console.log('Dados recebidos:', data);
+
+          if(data.status === 'logado'){
+                console.log('Deu certo');
+                mostraFormulario();
+          } else {
+            window.location.replace('logar.php');
+          }
+
+           
+
+        })
+
+        .catch(function (error) {
+            console.error('Erro na solicitação Fetch:', error);
+        })
+
+};
+
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelector('.bloqueado').addEventListener('click', function (evento) {
+        evento.preventDefault();
+        checaLogin();
+    });
+});
+
+function mostraFormulario2(){
+    document.getElementById('overlayAvaliacao').style.display = 'flex';
+    
 
 }
 
+function mostraFormulario(){
+    document.getElementById('overlay').style.display = 'flex';
+    viacep();
+
+}
+
+function fecharFormulario(event) {
+    event.preventDefault();
+    document.getElementById('overlay').style.display = 'none';
+  }
+
+  function fecharAvaliacao(event) {
+    event.preventDefault();
+    document.getElementById('overlayAvaliacao').style.display = 'none';
+  }
+
+
+
+  function enviaAvaliacao(event) {
+    event.preventDefault();
+    var formulario = new FormData(document.getElementById('avaliacaoForm'));
+
+    fetch('processa_avaliacao.php', {
+
+        method: 'POST',
+        body:formulario
+
+    })
+
+    .then(response => response.text())
+
+    .then(data => {
+        
+        console.log('Dados recebidos:', data);
+
+        
+
+        document.getElementById('overlayAvaliacao').style.display = 'none';
+        $("#Aceita").click();
+    })
+    .catch(error => console.error('Erro:', error));
+
+
+   
+  }
+
+
+  function enviaFormulario(event) {
+    event.preventDefault();
+    var formulario = new FormData(document.getElementById('agendamento'));
+
+    fetch('solicitacao.php', {
+
+        method: 'POST',
+        body:formulario
+
+    })
+
+    .then(response => response.text())
+
+    .then(data => {
+        
+        console.log('Dados recebidos:', data);
+
+        if(data === 'sucesso'){
+              console.log('Deu certo');
+              alert("Solicitação enviada com sucesso.");
+        } else {
+            console.log('Deu errado');
+        }
+
+        document.getElementById('overlay').style.display = 'none';
+    })
+    .catch(error => console.error('Erro:', error));
+
+
+   
+  }
+
+  
+
+$(document).ready(function() {
+    var click = 0;
+
+        $(".menu-burger-click").click(function() {
+            if (click === 0) {
+            $(".dropDown").css("display", "block");
+            $(".alinha-dropdown").css("align-items", "end");
+            $(".alinha-dropdown").css("align-self", "flex-start"); 
+            click = 1;
+            } else {
+                $(".dropDown").css("display", "none");
+            click = 0;
+            }
+        });
+
+
+});
+var click2 = 0;
+function toggle(){
+    if(click2 === 0){
+        
+    $(".dropDown2").css("display", "block");
+    $(".dropDown2").html("<table><tr><td><h5><a>Meu Perfil</a></h5></td></tr><tr><td><h5><a href='listagem_solicitacoes.php'>Minhas Solicitações</h5></a></td></tr><tr><td><h5><a href='includes/logica/logica_pessoa.php?sair=true'>Sair</h5></a></td></tr></table>");
+    click2 = 1;
+} else {
+    $(".dropDown2").css("display", "none");
+    click2 = 0;
+}
+}
+
+$(document).ready(function() {
+    var tipo_usuario = $("#usuario_tipo").val();
+    $(".solicitacoes").on("click",function lista_solicitacoes() {
+        var situacao = $(this).data('status');
+        if(situacao == "pendente"){
+        console.log("pendente");
+
+        fetch('processa_solicitacao.php?status=pendente', {
+
+            method: 'get',
+    
+        })
+    
+        .then(response => response.json())
+    
+        .then(data => {
+            
+            console.log('Dados recebidos:', data);
+            var listagemSolicitacao = '';
+            if(tipo_usuario == "usuario"){
+            data.forEach(function (linha) {
+                let cod_prestador = linha.cod_prestador;
+                listagemSolicitacao += '<tr>' +
+                '<td><h5>' + linha.status + '</h5></td>' +
+                '<td><h5>' + linha.cidade + '</h5></td>' +
+                '<td><h5>' + linha.rua + '</h5></td>' +
+                '<td><h5>' + linha.numero + '/'+ linha.complemento +'</h5></td>' +
+                '<td><h5>' + linha.DataRegistro + '</h5></td>' +
+                '<td><h5>' + linha.data_agendamento + '</h5></td>' +
+                '<td><h5>' + linha.descricao + '</h5></td>' +
+                '<td><h5>'+ linha.tipo_servico +'</h5></td>' +
+                '<td><a data-alternativa="deleta" data-status="'+ linha.status +'" data-solicitacao="'+linha.id_solicitacao+'" href="#" class="deleta" onclick="respondeSolicitacao(event)" ><img src="imagens/icones/delete.png"></a></td>' +
+                '</tr>';
+            
+
+            })
+            }else{
+
+                data.forEach(function (linha) {
+                    let cod_prestador = linha.cod_prestador;
+                    listagemSolicitacao += '<tr>' +
+                    '<td><h5>' + linha.status + '</h5></td>' +
+                    '<td><h5>' + linha.cidade + '</h5></td>' +
+                    '<td><h5>' + linha.rua + '</h5></td>' +
+                    '<td><h5>' + linha.numero + '/'+ linha.complemento +'</h5></td>' +
+                    '<td><h5>' + linha.DataRegistro + '</h5></td>' +
+                    '<td><h5>' + linha.data_agendamento + '</h5></td>' +
+                    '<td><h5>' + linha.descricao + '</h5></td>' +
+                    '<td><h5>'+ linha.tipo_servico +'</h5></td>' +
+                    '<td><a data-alternativa="deleta" data-status="'+ linha.status +'" data-solicitacao="'+linha.id_solicitacao+'" href="#" class="deleta" onclick="respondeSolicitacao(event)" ><img src="imagens/icones/delete.png"></a><a data-alternativa="aceita"  data-status="'+ linha.status +'" data-solicitacao="'+linha.id_solicitacao+'" href="#" class="aceita" onclick="respondeSolicitacao(event)" ><img  src="imagens/icones/aceita.png"></a></td>' +
+                    '</tr>';
+                
+    
+                })
+
+            }
+            $(".listagem-solicitacoes").html(listagemSolicitacao);
+        })
+        .catch(error => console.error('Erro:', error));
+    
 
 
 
 
+        }else if(situacao == "aceita"){
+            console.log("aceita");
+
+            fetch('processa_solicitacao.php?status=aceita', {
+
+                method: 'get',
+        
+            })
+        
+            .then(response => response.json())
+        
+            .then(data => {
+                
+                console.log('Dados recebidos:', data);
+                var listagemSolicitacao = '';
+                if(tipo_usuario == "usuario"){
+                data.forEach(function (linha) {
+                    let cod_prestador = linha.cod_prestador;
+                    listagemSolicitacao += '<tr>' +
+                    '<td><h5>' + linha.status + '</h5></td>' +
+                    '<td><h5>' + linha.cidade + '</h5></td>' +
+                    '<td><h5>' + linha.rua + '</h5></td>' +
+                    '<td><h5>' + linha.numero + '/'+ linha.complemento +'</h5></td>' +
+                    '<td><h5>' + linha.DataRegistro + '</h5></td>' +
+                    '<td><h5>' + linha.data_agendamento + '</h5></td>' +
+                    '<td><h5>' + linha.descricao + '</h5></td>' +
+                    '<td><h5>'+ linha.tipo_servico +'</h5></td>' +
+                    '<td><a data-alternativa="deleta" data-status="'+ linha.status +'" data-solicitacao="'+linha.id_solicitacao+'" href="#" class="deleta" onclick="respondeSolicitacao(event)" ><img src="imagens/icones/delete.png"></a><a data-alternativa="aceita"  data-status="'+ linha.status +'" data-solicitacao="'+linha.id_solicitacao+'" href="#" class="aceita avaliacao"><img  src="imagens/icones/aceita.png"></a></td>' +
+                    '</tr>';
+                  
+    
+                })
+            } else {
+
+                data.forEach(function (linha) {
+                    let cod_prestador = linha.cod_prestador;
+                    listagemSolicitacao += '<tr>' +
+                    '<td><h5>' + linha.status + '</h5></td>' +
+                    '<td><h5>' + linha.cidade + '</h5></td>' +
+                    '<td><h5>' + linha.rua + '</h5></td>' +
+                    '<td><h5>' + linha.numero + '/'+ linha.complemento +'</h5></td>' +
+                    '<td><h5>' + linha.DataRegistro + '</h5></td>' +
+                    '<td><h5>' + linha.data_agendamento + '</h5></td>' +
+                    '<td><h5>' + linha.descricao + '</h5></td>' +
+                    '<td><h5>'+ linha.tipo_servico +'</h5></td>' +
+                    '<td><a data-alternativa="deleta" data-status="'+ linha.status +'" data-solicitacao="'+linha.id_solicitacao+'" href="#" class="deleta" onclick="respondeSolicitacao(event)" ><img src="imagens/icones/delete.png"></a></td>' +
+                    '</tr>';
+                
+    
+                })
+
+            }
+                $(".listagem-solicitacoes").html(listagemSolicitacao);
+                document.querySelectorAll('.avaliacao').forEach(function(element) {
+                    element.addEventListener('click', function() {
+                        var idSolicitacao = $(this).data('solicitacao');
+                        $('#idHidden').val(idSolicitacao);
+                        mostraFormulario2();
+                    });
+                });
+            })
+            .catch(error => console.error('Erro:', error));
+        
+    
+    
+    
+    
+
+        }else if (situacao == "recusada"){
+            console.log("recusada");
+
+            fetch('processa_solicitacao.php?status=recusada', {
+
+                method: 'get',
+        
+            })
+        
+            .then(response => response.json())
+        
+            .then(data => {
+                if(tipo_usuario == "usuario"){
+
+                    var listagemSolicitacao = '';
+                data.forEach(function (linha) {
+                    let cod_prestador = linha.cod_prestador;
+                    listagemSolicitacao += '<tr>' +
+                    '<td><h5>' + linha.status + '</h5></td>' +
+                    '<td><h5>' + linha.cidade + '</h5></td>' +
+                    '<td><h5>' + linha.rua + '</h5></td>' +
+                    '<td><h5>' + linha.numero + '/'+ linha.complemento +'</h5></td>' +
+                    '<td><h5>' + linha.DataRegistro + '</h5></td>' +
+                    '<td><h5>' + linha.data_agendamento + '</h5></td>' +
+                    '<td><h5>' + linha.descricao + '</h5></td>' +
+                    '<td><h5>'+ linha.tipo_servico +'</h5></td>' +
+                    '</tr>';
+                    
+    
+                })
+
+                } else { console.log('Dados recebidos:', data);
+                var listagemSolicitacao = '';
+                data.forEach(function (linha) {
+                    let cod_prestador = linha.cod_prestador;
+                    listagemSolicitacao += '<tr>' +
+                    '<td><h5>' + linha.status + '</h5></td>' +
+                    '<td><h5>' + linha.cidade + '</h5></td>' +
+                    '<td><h5>' + linha.rua + '</h5></td>' +
+                    '<td><h5>' + linha.numero + '/'+ linha.complemento +'</h5></td>' +
+                    '<td><h5>' + linha.DataRegistro + '</h5></td>' +
+                    '<td><h5>' + linha.data_agendamento + '</h5></td>' +
+                    '<td><h5>' + linha.descricao + '</h5></td>' +
+                    '<td><h5>'+ linha.tipo_servico +'</h5></td>' +
+                    '</tr>';
+                    
+    
+                })
+            }
+                $(".listagem-solicitacoes").html(listagemSolicitacao);
+            })
+            .catch(error => console.error('Erro:', error));
+        
+        
+    
+    
+
+            }
+   
+    })
+
+});
+
+
+function respondeSolicitacao(event){
+    var solicitacao = $(event.currentTarget).data('solicitacao');
+    var alternativa =  $(event.currentTarget).data('alternativa');
+    var situacao =  $(event.currentTarget).data('status');
+    fetch('respostaSolicitacao.php?solicitacao='+solicitacao+'&alternativa='+alternativa, {
+
+        method: 'GET',
+        
+
+    })
+
+    .then(response => response.text())
+
+    .then(data => {
+        
+        console.log('Dados recebidos:', data);
+
+        if(data === 'aceita'){
+              console.log('Deu certo');
+              alert("Solicitação aceita.");
+              if(situacao == 'Aceita'){
+                $("#Aceita").click();
+              }else if(situacao == 'Deletada'){
+                $("#Deletada").click();
+              }else{
+                $("#Pendente").click();
+              }
+        } else if (data === 'deletada'){
+            console.log('Solicitacao Deletada');
+            alert("Solicitação deletada.");
+            if(situacao == 'Aceita'){
+                $("#Aceita").click();
+              }else if(situacao == 'Deletada'){
+                $("#Deletada").click();
+              }else{
+                $("#Pendente").click();
+              }
+            
+        }
+
+        
+    })
+    .catch(error => console.error('Erro:', error));
+
+
+
+}
+
+$(document).ready(function(){
+    $(".pesquisar").on("click", function(event) {
+        pesquisar(event);
+    })
+});
+function pesquisar(event){
+    event.preventDefault();
+    var pesquisa = $("#pesquisar").val();
+    var categoria = $("#categoriasIndex").val();
+        fetch('pesquisa.php?categoria='+categoria+'&pesquisa='+pesquisa, {
+            method: 'GET'
+        
+        })
+            .then(function (response) {
+                console.log('Resposta do servidor:', response);
+                return response.json();
+            })
+            .then(function (data) {
+                console.log('Dados recebidos:', data);
+
+
+                
+                var listagemPrestadores = '';
+                var barraAtributos = '<div class="grid-listagem-barra" id="listagem-barra"><a href="#" id="voltar">Voltar</a><a class="barra" data-categoria="'+ categoria +'" data-valor="nome" href="#">Nome</a><a>Cidade</a><a>Bairro</a><a>Email</a><a>Celular</a><a class="barra" data-categoria="'+ categoria +'" data-valor="avaliacao" href="#">Avaliacao</a></div> ';
+                data.forEach(function (linha) {
+                    let cod_prestador = linha.cod_prestador;
+                    listagemPrestadores += '<div class="grid-listagem-prestador"><div class="grid-prestador-items"><a href="perfil_prestador.php?cat='+categoria+'&cod='+cod_prestador+'"><img class="imagem-prestador imagem-redonda" src="imagens/fotos_perfil_prestador/' + linha.foto_perfil + ' "></a></div><div class="grid-prestador-items"><h5>' + linha.nome_profissional + '</h5></div><div class="grid-prestador-items"><h5>' + linha.cidade + '</h5></div><div class="grid-prestador-items"><h5>' + linha.bairro + '</h5></div><div class="grid-prestador-items"><h5>' + linha.email + '</h5></div><div class="grid-prestador-items"><h5>' + linha.celular + '</h5></div><div class="grid-prestador-items"><h5>' + linha.media + '</h5></div></div>'
+
+                })
+
+                document.getElementById('listagens-index').innerHTML = barraAtributos + listagemPrestadores;
+                fixaBarra();
+                bloqueiaLink();
+                valor = 0;
+                
+
+            })
+
+            .catch(function (error) {
+                console.error('Erro na solicitação Fetch:', error);
+            })
+
+}

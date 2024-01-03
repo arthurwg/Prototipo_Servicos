@@ -1,0 +1,47 @@
+body {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    min-height: 100vh;
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../imagens/soldador1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow-y: auto;
+
+  }
+
+  
+
+  .form-container {
+    
+    width: fit-content;
+    height: fit-content;
+    min-height: 200px;
+    background-color: #2C2C2C;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    color: white;
+    padding: 20px;
+    text-align: justify;
+  }
+
+  .form-container a{
+    text-decoration: none;
+  }
+
+  p{
+    text-align: center;
+  }
+
+  #botao1,
+#botao2 {
+    text-align: center;
+   
+}

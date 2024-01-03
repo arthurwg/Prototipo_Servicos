@@ -55,6 +55,36 @@ function inserirPessoa($conexao,$array,$link,$tipoCadastro)
 }
 
 
+function verifica_tipo($conexao,$tiposervico){
+
+    $query = $conexao->prepare(
+        "select cod from tipo_servico where descricao = ?"
+    );
+
+    $query->bindParam(1, $tiposervico, PDO::PARAM_STR);
+    $query->execute();
+    $resultado = $query->fetch(PDO::FETCH_ASSOC);
+    return $resultado['cod'];
+
+
+
+}
+
+function vinculaTipo($conexao,$codigo_tipo,$codigo_prestador){
+
+    $query = $conexao->prepare(
+        "insert into realiza_tipo
+        (cod_prestador,cod_tipo) 
+        values (?, ?)"
+    );
+$resultado = $query->execute([$codigo_prestador, $codigo_tipo]);
+return $resultado;
+
+
+
+}
+
+
 function alterarPessoa($conexao, $array)
 {
     try {
@@ -117,6 +147,7 @@ function acessarPessoa($conexao,$array,$senha,$escolha)
                 $pessoa = $query->fetch(); //coloca os dados num array $usuario
                 if ($pessoa) {  
                     if (password_verify($senha, $pessoa['senha']) and $pessoa['confirmacao'] == 1) {
+                        $_SESSION['tipo'] = 'usuario';
                         return $pessoa;
                     } else {
                         return false;
@@ -141,7 +172,9 @@ function acessarPessoa($conexao,$array,$senha,$escolha)
                  $pessoa = $query->fetch(); //coloca os dados num array $usuario
                 if ($pessoa) {  
                     if (password_verify($senha, $pessoa['senha']) and $pessoa['confirmacao'] == 1) {
+                        $_SESSION['tipo'] = "prestador";
                           return $pessoa;
+                          
                     } else {
                          return false;
                     }

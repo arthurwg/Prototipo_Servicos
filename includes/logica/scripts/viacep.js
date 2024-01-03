@@ -40,8 +40,9 @@ function viacep(){
                         //Atualiza os campos com os valores da consulta.
                         
                         $("#cidade").val(dados.localidade);
-                        $("#estado").val(dados.uf);
+                        $("#uf").val(dados.uf);
                         $("#bairro").val(dados.bairro);
+                        $("#rua").val(dados.logradouro);
                         
                         
                     } //end if.

@@ -1,0 +1,82 @@
+body {
+    background-color: #E9F2F7 ;
+}
+
+.custom-div {
+    min-height: 100vh; 
+    background-color: #E9F2F7;
+    
+}
+
+
+td {
+    color: black;
+    text-align: center;
+}
+
+.table-hover tr:hover{
+    
+}
+
+th{
+    text-align: center;
+}
+
+td a{
+    color: black;
+    text-decoration: none;
+}
+
+.gap-col{
+
+    margin-right: 5px;
+
+}
+
+.row{
+    text-align: center;
+}
+
+.column-with-border {
+    border: 1px solid #dddddd; 
+    padding: 5px;
+}
+
+.listagem-solicitacoes{
+    text-align: center;
+}
+
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+  }
+
+  #overlayAvaliacao {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+  }
+
+  .form-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 33%; 
+    max-width: 600px; 
+    z-index: 3;
+  }

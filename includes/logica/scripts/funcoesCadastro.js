@@ -5,5 +5,5 @@ $(document).ready(function() {
       $('input[name="' + $(this).attr('name') + '"]').not(this).prop('disabled', false);
 
       
-      }
+      })
     });
